@@ -202,8 +202,8 @@ class UpdaterTest : public ::testing::Test {
 };
 
 TEST_F(UpdaterTest, getprop) {
-    expect(android::base::GetProperty("ro.product.device", "").c_str(),
-           "getprop(\"ro.product.device\")",
+    expect(android::base::GetProperty("ro.product.system.device", "").c_str(),
+           "getprop(\"ro.product.system.device\")",
            kNoCause);
 
     expect(android::base::GetProperty("ro.build.fingerprint", "").c_str(),

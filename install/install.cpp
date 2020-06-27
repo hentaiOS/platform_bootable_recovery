@@ -198,7 +198,7 @@ int CheckPackageMetadata(const std::map<std::string, std::string>& metadata, Ota
     return INSTALL_ERROR;
   }
 
-  auto device = android::base::GetProperty("ro.product.device", "");
+  auto device = android::base::GetProperty("ro.product.system.device", "");
   auto pkg_device = get_value(metadata, "pre-device");
   if (pkg_device != device || pkg_device.empty()) {
     LOG(ERROR) << "Package is for product " << pkg_device << " but expected " << device;
